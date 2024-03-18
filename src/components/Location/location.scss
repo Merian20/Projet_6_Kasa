@@ -1,14 +1,168 @@
-//@import './../../style/index.scss';
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap') 
   }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
+.hebergements {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .informations {
+        display: flex;
+        justify-content: space-between;
+    
+        .container-profile {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .profile {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    border-radius: 50%;
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+
+            .container-stars {
+                width: calc(24px * 5 + 16px * 4); /* Largeur pour exactement 5 étoiles avec un espacement de 16px entre chaque */
+                height: 24px; /* Hauteur d'une étoile */
+                
+                .stars {
+                    background: url('./../../assets/GreyStar.svg');
+                    background-size: contain;
+                    height: 24px;
+                    width: calc(24px * 5 + 16px * 4); /* Largeur pour exactement 5 étoiles avec un espacement de 16px entre chaque */
+
+                }
+                .stars.stars-1 {
+                    background-position: 0px 0px; /* Afficher 1 étoile pleine */
+                    background-image: url('./../../assets/RedStar.svg');
+                }
+                
+                .stars.stars-2 {
+                    background-position: -24px 0px; /* Afficher 2 étoiles pleines */
+                    background-image: url('./../../assets/RedStar.svg');
+                }
+                
+                .stars.stars-3 {
+                    background-position: -48px 0px; /* Afficher 3 étoiles pleines */
+                    background-image: url('./../../assets/RedStar.svg');
+                }
+                
+                .stars.stars-4 {
+                    background-position: -72px 0px; /* Afficher 4 étoiles pleines */
+                    background-image: url('./../../assets/RedStar.svg');
+                }
+                
+                .stars.stars-5 {
+                    background-position: -96px 0px; /* Afficher 5 étoiles pleines */
+                    background-image: url('./../../assets/RedStar.svg');
+                }
+                
+            }
+            
+        }
+    }
+
+    h1 {
+        font-size: 36px;
+        color: var(--coral);
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .geography {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .structure-tags {
+        display: flex;
+        gap: 15px;
+        padding: 0 0 20px 0;
+    }
+
+    .host {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 18px;
+        color: var(--coral);;
+        font-weight: 500;
+    }
+
+    .logement-page {
+        display: flex;
+        gap: 100px;
+
+        p {
+            padding: 5px 0;
+            margin: 0;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        ul {
+            padding: 5px 0;
+            margin: 0;
+
+            li {
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 26px;
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    
+    .hebergements {
+        display: flex;
+        flex-direction: column;
+        padding: 0px;
+        width: 335px;
+        height: 515px;
+        flex-grow: 1;
+
+        .logement-page {
+            gap: 20px;
+        }
+        
+        .informations h1 {
+            font-size: 18px;
+            font-weight: 500;
+            
+            .container-profile {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+        
+                .profile > .host {
+                    text-align: end;
+                }
+        
+                .container-stars {
+                    width: 95px;
+                }
+            }
+        }
+            
+        .geography {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+    }
+}
+
+/*.container-profile {
+    flex-direction: row-reverse;
+}*/

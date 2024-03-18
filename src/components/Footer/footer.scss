@@ -1,27 +1,30 @@
 .footer {
     background-color: black;
-    text-align: center;
-    padding: 15px;
-    position: relative;
+    margin-top: 40px;
+    height: 209px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     >img {
         color: white;
         width: 122px;
-        height: 40px;
+        height: 39.44px;
     }
 
     p {
         color: white;
     }
-    @media (max-width: 375px) {
-        height: auto;
-        position: static;
-
-        .container-footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 50px 0 0 0;
-        }
-    }
 }
+
+/*@media (max-width: 375px) {
+    .footer {
+        margin-top: calc(100vh - 209px);
+    }
+}*/

@@ -1,0 +1,71 @@
+.carousel {
+    .control-arrow:before {
+        border: none !important;
+        background: url("./../../assets/vector.svg") center center/contain no-repeat;
+        width: 70px;
+        height: 200px;
+    }
+    
+    .control-next.control-arrow:before {
+        transform: scaleX(-100%);
+    }
+    carousel-slider {
+        width: 100%;
+        height: 415px;
+        border-radius: 25px;
+
+    }
+    .slide img {
+        width: 100%;
+        border-radius: 25px;
+        height: 415px;
+        object-fit: cover;
+    }
+    .carousel-status {    
+        top: unset;
+        bottom: 0;
+        left: 50%;
+        right: 50%;
+        margin: 5px 0;
+        font-size: 18px;
+    }
+}
+.carousel.carousel-slider .control-arrow:hover {
+    background-color: transparent;
+}
+
+
+@media (max-width :375px) {
+    .carousel-slider {
+        width: 100%;
+        border-radius: 10px;
+        height:255px;
+
+        .carousel .slider-wrapper  {
+            height: 100%;
+            border-radius: 10px;
+            
+            .carousel .slide img {
+                width: 335px;
+                height: 255px;
+            } 
+        }
+    }
+
+    .carousel.carousel-slider .control-arrow {
+        background-color: transparent;
+    }
+
+    .control-next.control-arrow:before {
+        transform: scaleX(-100%);
+        width: 12px;
+    }
+    .carousel .control-prev.control-arrow:before {
+        width: 12px;
+    }
+
+    .carousel .carousel-status {
+        left: 45%;
+    }
+    
+}

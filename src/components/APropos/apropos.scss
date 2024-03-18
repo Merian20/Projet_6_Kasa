@@ -6,3 +6,16 @@
     padding: 50px;
     margin: 10px 10px 65px 10px;
 }
+
+@media (max-width: 375px) {
+    .structure-encart {
+        height: 100%;
+        flex-grow: 1;
+        
+        .encart-body {
+            width: 335px;
+        }
+    }
+    
+    
+}

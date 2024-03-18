@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './encart.scss';
 import Vector from './../../assets/Vector.png'
+//import Accordion from 'react-bootstrap/Accordion';
 
 function Encart({ title, content, children }) { /*children pour des éléments plus complexes, props moins complexes*/
   const [isExpanded, setIsExpanded] = useState(false);
