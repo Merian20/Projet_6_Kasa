@@ -2,7 +2,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
     justify-content: center;
     align-items: center;
 
@@ -24,7 +24,17 @@
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 1024px) {
+    .container-404 .error {
+        font-size: 192px;
+    }
+
+    .container-404 p, a{
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
     .container-404 {
         display: flex;
         width: 375px;
@@ -37,6 +47,7 @@
 
         p {
             text-align: center;
+            font-size: 18px;
         }
     }
 }

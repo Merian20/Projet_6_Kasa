@@ -2,10 +2,12 @@
     padding: 20px 0;
     display: flex;
     justify-content: space-between;
+    place-items: center;
 
     .navigation {
-        gap: 70px;
+        gap: 60px;
         display: flex;
+        align-items: center;
 
         >a { 
             color: black;
@@ -20,24 +22,34 @@
     }
 
     img {
-        height: 46.88px; // s'appliquera à toutes les tailles d'écran
+        height: 46.88px;
     }
+}
 
-    @media (max-width: 375px) {
-        padding: 0;
+@media (min-width: 400px) and (max-width: 1024px) {
+    .header .navigation {
+        gap: 30px;
+
+        > a {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .header {
+        padding-bottom: 0;
         align-items: center;
         
         .navigation {
             gap: 26px;
             align-items: center;
-
-            
-        >a {
-            font-size: 12px;
-            text-transform: uppercase;
-            color: rgba(0, 0, 0, 1);
-
-        }
+    
+            >a {
+                font-size: 12px;
+                text-transform: uppercase;
+                color: rgba(0, 0, 0, 1);
+            }
         }
     }
 }

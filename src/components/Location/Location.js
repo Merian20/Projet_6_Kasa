@@ -14,9 +14,9 @@ function Location() {
     const selectedLocation = logements.find(location => location.id === id); // Trouve l'image correspondante dans les données
 	console.log(selectedLocation)
 
-    if (!selectedLocation) {
-        return <div>Aucune image trouvée</div>; // Gérer le cas où aucune image n'est trouvée
-    }
+    // if (!selectedLocation) {
+    //     return <div>Aucune image trouvée</div>; // Gérer le cas où aucune image n'est trouvée
+    // }
     const rating = parseInt(selectedLocation.rating);
     const starsClass = `stars stars-${rating}`;
 
@@ -31,7 +31,6 @@ function Location() {
                     <p className='geography'>{selectedLocation.location}</p>
                         <div className='structure-tags'>
                             <TagName tags={selectedLocation.tags} />
-                            {/* <p></p> */}
                         </div>
                 </div>
                 <div className='container-profile'>
@@ -40,7 +39,15 @@ function Location() {
                         <img src={selectedLocation.host.picture} alt="Host"></img>
                     </div>
                     <div className='container-stars'>
-                        <div className={starsClass}></div>
+                        {[0, 1, 2, 3, 4].map((index) => {
+                            if (index < rating) {
+                                // full star
+                                return <div key={index} className={`${starsClass} filled`}></div>;
+                            } else {
+                                // empty star
+                                return <div key={index} className={`${starsClass} empty`}></div>;
+                            }
+                        })}
                     </div>
                 </div>
             </div>
