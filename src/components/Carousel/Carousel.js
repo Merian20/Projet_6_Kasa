@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './carousel.scss';
 
-function DemoCarousel({ cover }) {
-    const [selectedLogementId] = useState(null);
+function DemoCarousel({ pictures }) {
+    // const [selectedLogementId] = useState(null);
 
-    console.log("cover :", cover);
+    console.log("cover :", pictures);
 
     const statusFormatter = (currentItem, total) => {
         return `${currentItem}/${total}`;
@@ -14,14 +14,18 @@ function DemoCarousel({ cover }) {
 
     return (
         <div>
-            <Carousel key={selectedLogementId} showThumbs={false} showIndicators={false} statusFormatter={statusFormatter} infiniteLoop={true}>
-                {cover.map(image => {
-                    return (<img src={image} alt='logements'/>
+            <Carousel showThumbs={false} showIndicators={false} statusFormatter={statusFormatter} infiniteLoop={true}> 
+                {pictures && Array.isArray(pictures) && pictures.map((image, index) => {
+                    return (
+                        <img key={index} src={image} alt='logements' />
                     );
                 })}
+                {/* */}
             </Carousel>
         </div>
     );
 }
 
 export default DemoCarousel;
+
+// retrait de key={selectedLogementId} car pas utile

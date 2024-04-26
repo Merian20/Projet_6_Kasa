@@ -9,14 +9,11 @@ import TagName from '../TagName/tagName';
 
 // console.log(logements)
 function Location() {
-	const { id } = useParams(); // Récupère l'ID de l'image depuis les paramètres d'URL
+	const { id } = useParams(); // useParams récupère l'ID de l'image depuis les paramètres d'URL
 	console.log(id)
     const selectedLocation = logements.find(location => location.id === id); // Trouve l'image correspondante dans les données
 	console.log(selectedLocation)
 
-    // if (!selectedLocation) {
-    //     return <div>Aucune image trouvée</div>; // Gérer le cas où aucune image n'est trouvée
-    // }
     const rating = parseInt(selectedLocation.rating);
     const starsClass = `stars stars-${rating}`;
 
@@ -24,7 +21,7 @@ function Location() {
 		<>
         <Header />
 		<div className='hebergements'>
-            <DemoCarousel cover={selectedLocation.pictures} />
+            <DemoCarousel pictures={selectedLocation.pictures} />
             <div className='informations'>
                 <div>
                     <h1>{selectedLocation.title}</h1>
