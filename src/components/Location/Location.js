@@ -1,18 +1,28 @@
+import React, { useEffect } from 'react';
 import './location.scss';
 import logements from '../../logements.json';
 import DemoCarousel from './../Carousel/Carousel';
 import Header from './../Header/header';
 import Footer from './../Footer/Footer';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Encart from '../Encart/encart';
 import TagName from '../TagName/tagName';
 
 // console.log(logements)
 function Location() {
 	const { id } = useParams(); // useParams récupère l'ID de l'image depuis les paramètres d'URL
-	console.log(id)
     const selectedLocation = logements.find(location => location.id === id); // Trouve l'image correspondante dans les données
-	console.log(selectedLocation)
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!selectedLocation) {
+            navigate('/error');
+        }
+    }, [navigate, selectedLocation]);
+
+    if (!selectedLocation) {
+        return null;
+    }
 
     const rating = parseInt(selectedLocation.rating);
     const starsClass = `stars stars-${rating}`;

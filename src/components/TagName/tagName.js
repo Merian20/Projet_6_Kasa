@@ -1,7 +1,7 @@
 import './tagname.scss'
 
 function TagName({ tags }) {
-    console.log('tags :', tags);
+    // console.log('tags :', tags);
     return tags.map((tag, index) => {
         return (
             <div key={index}>

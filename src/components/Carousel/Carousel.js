@@ -6,7 +6,7 @@ import './carousel.scss';
 function DemoCarousel({ pictures }) {
     // const [selectedLogementId] = useState(null);
 
-    console.log("cover :", pictures);
+    // console.log("cover :", pictures);
 
     const statusFormatter = (currentItem, total) => {
         return `${currentItem}/${total}`;
